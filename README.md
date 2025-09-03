@@ -1,49 +1,67 @@
-# K-Means Clustering in Java
 
-This project implements the **K-Means clustering algorithm** using Java and visualizes the results using **JFreeChart**.  
-It was developed as part of a university assignment for the course **Computational Intelligence**.
+# K-Means Clustering in Java (with JFreeChart Visualization)
 
-## 📁 Project Structure
+## 📌 Overview
+This project is an implementation of the **K-Means Clustering** algorithm in Java.  
+It takes a set of 2D points and groups them into clusters based on distance.
 
-- `Main.java` – Entry point of the application. Handles repetition and selection of best clustering solution.
-- `K_Means.java` – Implements the logic for clustering: initialization, assignment, updating clusters, and error calculation.
-- `Cluster.java` – Represents each cluster. Stores its entries and computes new center coordinates.
-- `Entry.java` – Represents a data point with X and Y coordinates.
-- `CreateScatterPlot.java` – Generates scatter plots for visualizing clusters using JFreeChart.
-- `Create_SDO.java` – Creates spatial data structures for mapping entries (SDO table).
+Additionally, it uses **JFreeChart** to visualize the clustering results as scatter plots.
 
-## 📊 Features
+---
 
-- Dynamic cluster creation and assignment
-- Euclidean distance calculation
-- Visualization of results for different values of `k` (e.g., 3, 6, 9, 12)
-- Elbow method (based on clustering error) to suggest the optimal number of clusters
+## 🗂 Project Structure
 
-## 🛠 Technologies Used
+### 1. `Entry.java`
+A simple class representing a point with two coordinates:
+- `x` → X-axis value  
+- `y` → Y-axis value  
 
-- Java
-- JFreeChart (for chart visualization)
+### 2. `Cluster.java`
+Represents a cluster (group of points).
+- Stores the cluster center (`x_Center`, `y_Center`)  
+- Calculates Euclidean distance between a point and the cluster center  
+- Updates the center to the average of assigned points  
+- Tracks the error (how well the cluster fits its points)  
 
-## 🚀 How to Run
+### 3. `Create_SDO.java`
+Generates the **synthetic dataset** (1200 points).  
+The points are distributed in several rectangular regions, forming natural clusters with some noise.
 
-1. **Compile all files**:
+### 4. `K_Means.java`
+Implements the K-Means algorithm:
+- Converts raw data into `Entry` objects  
+- Initializes random cluster centers  
+- Assigns points to the nearest cluster  
+- Updates cluster centers iteratively  
+- Computes the overall clustering error  
+
+### 5. `CreateScatterPlot.java`
+Uses **JFreeChart** to visualize the clustering result:
+- One series for cluster centers (`Centers`)  
+- One series per cluster with its assigned points  
+- Custom background color  
+- Displayed in a Swing `JFrame` window  
+
+### 6. `Main.java`
+The entry point:
+- Generates the dataset (`Create_SDO`)  
+- Runs K-Means with **3, 6, 9, and 12 clusters**  
+- Improves results by repeating K-Means multiple times and keeping the best (lowest error) solution  
+- Displays each result in a scatter plot window  
+
+---
+
+## ▶️ How to Run
+
+### Requirements
+- Java 8+  
+- [JFreeChart](https://www.jfree.org/jfreechart/) library  
+
+### Compile & Run
+1. Compile all `.java` files with JFreeChart in the classpath:
    ```bash
-   javac *.java
-   ```
+   javac -cp .:jfreechart-x.y.z.jar *.java
 
-2. **Run the main class**:
-   ```bash
-   java Main
-   ```
-
-Make sure JFreeChart is correctly added to your classpath if needed.
-
-## 📚 Notes
-
-- The clustering is repeated multiple times (e.g. 15 iterations) to select the best result.
-- Visualization helps identify the "knee point" where error stops significantly decreasing.
-
-## 👨‍💻 Contributors
 
 Developed by:
 - Christos Ktsios  
