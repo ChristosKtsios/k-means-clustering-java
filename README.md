@@ -61,6 +61,33 @@ The entry point:
 1. Compile all `.java` files with JFreeChart in the classpath:
    ```bash
    javac -cp .:jfreechart-x.y.z.jar *.java
+// replace jfreechart-x.y.z.jar with your downloaded version
+2. Run the program:
+java -cp .:jfreechart-x.y.z.jar Main
+3.Four windows will open:
+- Scatter plot with 3 clusters
+- Scatter plot with 6 clusters
+- Scatter plot with 9 clusters
+- Scatter plot with 12 clusters
+4.📊 What You’ll See
+
+1200 points plotted in the 2D plane
+
+Points grouped into clusters with different colors
+
+Cluster centers plotted separately
+
+A visual comparison of results with 3, 6, 9, and 12 clusters
+
+⚙️ Possible Improvements
+
+Assign fixed colors per cluster for consistency
+
+Add labels for cluster centers
+
+Enable interactive charts (zoom, pan, tooltips)
+
+Allow users to choose the number of clusters at runtime
 
 
 Developed by:
