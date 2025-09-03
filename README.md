@@ -64,12 +64,12 @@ The entry point:
 // replace jfreechart-x.y.z.jar with your downloaded version
 ## 2. Run the program:
 java -cp .:jfreechart-x.y.z.jar Main
-3.Four windows will open:
+## 3.Four windows will open:
 - Scatter plot with 3 clusters
 - Scatter plot with 6 clusters
 - Scatter plot with 9 clusters
 - Scatter plot with 12 clusters
-4.📊 What You’ll See
+### 4.📊 What You’ll See
 
 1200 points plotted in the 2D plane
 
