@@ -62,7 +62,7 @@ The entry point:
    ```bash
    javac -cp .:jfreechart-x.y.z.jar *.java
 // replace jfreechart-x.y.z.jar with your downloaded version
-2. Run the program:
+## 2. Run the program:
 java -cp .:jfreechart-x.y.z.jar Main
 3.Four windows will open:
 - Scatter plot with 3 clusters
