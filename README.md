@@ -91,7 +91,7 @@ Allow users to choose the number of clusters at runtime
 
 
 Developed by:
-- Christos Ktsios  
+- Christos Katsios  
 (and authorized collaborators)
 
 ---
